@@ -19,4 +19,9 @@
     <None Include="wwwroot\swagger-ui\swagger-custom-styles.css" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj" />
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+
 </Project>

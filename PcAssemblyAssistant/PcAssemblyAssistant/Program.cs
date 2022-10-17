@@ -1,6 +1,4 @@
 using BLL.Infrastructure;
-using BLL.Interfaces;
-using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Reflection;
@@ -9,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddScoped<IMapper, AutoMapperProfileBLL>()
+builder.Services.AddAutoMapper(typeof(AutoMapperProfileBLL));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
