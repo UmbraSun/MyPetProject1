@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace DBO.Identity
 {
@@ -11,5 +11,15 @@ namespace DBO.Identity
         /// User full name
         /// </summary>
         public string FullName { get; set; }
+
+        /// <summary>
+        /// User Refresh token
+        /// </summary>
+        public string? RefreshToken { get; set; }
+        
+        /// <summary>
+        /// Token expiry time
+        /// </summary>
+        public DateTime? RefreshTokenExpiryTime { get; set; }
     }
 }
