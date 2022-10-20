@@ -1,5 +1,5 @@
 ﻿
-using DBO.Identity;
+using DBO_DAL.Identity;
 using Microsoft.AspNetCore.Identity;
 
 namespace PcAssemblyAssistant.AppStart

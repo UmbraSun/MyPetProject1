@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace DBO.Identity
+namespace DBO_DAL.Identity
 {
     /// <summary>
     /// user DTO

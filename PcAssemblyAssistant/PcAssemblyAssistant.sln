@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PcAssemblyAssistant", "PcAssemblyAssistant\PcAssemblyAssistant.csproj", "{273ED05F-D65F-4DBF-9C60-739373FC33DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PcAssemblyAssistant", "PcAssemblyAssistant\PcAssemblyAssistant.csproj", "{273ED05F-D65F-4DBF-9C60-739373FC33DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{131A838F-264E-4316-A876-79043791C73A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{131A838F-264E-4316-A876-79043791C73A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{1DF46E89-9106-4A45-8F73-D111F30DE8A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{1DF46E89-9106-4A45-8F73-D111F30DE8A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBO", "DBO\DBO.csproj", "{C059BFD6-5652-476E-A472-BD3B29ABB792}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBO_DAL", "DBO\DBO_DAL.csproj", "{C059BFD6-5652-476E-A472-BD3B29ABB792}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{88042B94-1E05-4E61-BF0F-6E78262CBBBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{88042B94-1E05-4E61-BF0F-6E78262CBBBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

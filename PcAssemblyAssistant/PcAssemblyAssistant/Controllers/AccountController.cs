@@ -1,4 +1,4 @@
-﻿using DBO.Identity;
+﻿using DBO_DAL.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using Models.API_models;
@@ -25,7 +25,6 @@ namespace PcAssemblyAssistant.Controllers
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
-        private readonly ILogger _logger;
 
         /// <summary>
         /// constructor
@@ -36,13 +35,11 @@ namespace PcAssemblyAssistant.Controllers
         /// <param name="logger"></param>
         public AccountController(UserManager<User> userManager,
                                  RoleManager<IdentityRole> roleManager,
-                                 IConfiguration configuration,
-                                 ILogger logger)
+                                 IConfiguration configuration)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
-            _logger = logger;
         }
 
         /// <summary>

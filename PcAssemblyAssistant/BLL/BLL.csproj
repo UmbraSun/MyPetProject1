@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
@@ -18,7 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj" />
-    <ProjectReference Include="..\DBO\DBO.csproj" />
+    <ProjectReference Include="..\DBO\DBO(DAL).csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
