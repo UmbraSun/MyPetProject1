@@ -11,18 +11,18 @@ namespace DBO_DAL.Entities
         public string? Descriptions { get; set; }
 
         // Producing country
-        public virtual Country Country { get; set; }
+        public virtual Country? Country { get; set; }
         // Processor General Parametrs
-        public virtual CPUGeneralParametrs Parametrs { get; set; }
+        public virtual CPUGeneralParametrs? Parametrs { get; set; }
         //Processor Core and Archtecture
-        public virtual CPUCoreAndArchitecture CoreAndArchitecture { get; set; }
+        public virtual CPUCoreAndArchitecture? CoreAndArchitecture { get; set; }
         // Processor Frequency and Overclock Capability
-        public virtual CPUFrequencyAndOverclockingCapability FrequencyAndOverclockingCapability { get; set; }
+        public virtual CPUFrequencyAndOverclockingCapability? FrequencyAndOverclockingCapability { get; set; }
         // Processor Thermal Characteristicks
-        public virtual CPUThermalCharacteristicks ThermalCharacteristicks { get; set; }
+        public virtual CPUThermalCharacteristicks? ThermalCharacteristicks { get; set; }
         // Integrated Graphic Processor 
-        public virtual CPUGraphicsCore GPU { get; set; }
+        public virtual CPUGraphicsCore? GPU { get; set; }
         // Processor RAM options
-        public virtual CPURAMoptions RAMoptions { get; set; }
+        public virtual CPURAMoptions? RAMoptions { get; set; }
     }
 }

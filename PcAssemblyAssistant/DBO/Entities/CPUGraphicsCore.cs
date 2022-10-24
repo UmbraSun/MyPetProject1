@@ -14,5 +14,8 @@ namespace DBO_DAL.Entities
         public UnitsOfMeasure UnitOfGPUCoreFreqency { get; set; }
         // Number of Executive Blocks
         public int ExecutiveBlocks { get; set; }
+
+        // CPU
+        public virtual IList<CPU> CPU { get; set; }
     }
 }

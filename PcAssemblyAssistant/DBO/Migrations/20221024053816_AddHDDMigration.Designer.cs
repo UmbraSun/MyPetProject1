@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PcAssemblyAssistant.DbContext;
 
@@ -11,9 +12,10 @@ using PcAssemblyAssistant.DbContext;
 namespace PcAssemblyAssistant.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221024053816_AddHDDMigration")]
+    partial class AddHDDMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1048,167 +1050,6 @@ namespace PcAssemblyAssistant.Migrations
                     b.ToTable("MBWebs");
                 });
 
-            modelBuilder.Entity("DBO_DAL.Entities.PS", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("Capacity")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CountryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int?>("PSCablesAndConnectorsId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PSCertificationId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PSCoolingSystemId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("PSElectricalParametrsId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UnitOfCapacity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CountryId");
-
-                    b.HasIndex("Name")
-                        .IsUnique();
-
-                    b.HasIndex("PSCablesAndConnectorsId");
-
-                    b.HasIndex("PSCertificationId");
-
-                    b.HasIndex("PSCoolingSystemId");
-
-                    b.HasIndex("PSElectricalParametrsId");
-
-                    b.ToTable("PSs");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.PSCablesAndConnectors", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("CPUPowerConnector")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Floppy4pinConnector")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("GPUPowerConnector")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MainPowerConnector")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Molex4PinConnector")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SATA15PinConnector")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PSCablesAndConnectors");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.PSCertification", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Certificate80PLUS")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PowerFactorCorrection")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ProtectionTechnologies")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PSCertifications");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.PSCoolingSystem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("CoolingSystem")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FanDiametrs")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SpeedControl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PSCoolingSystems");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.PSElectricalParametrs", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("LineCurrent12V")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LineCurrent3V")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LineCurrent5V")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LineCurrentMinus12V")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MainInputVoltageRange")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("StandbyCurrent")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("PSElectricalParametrs");
-                });
-
             modelBuilder.Entity("DBO_DAL.Entities.RAM", b =>
                 {
                     b.Property<int>("Id")
@@ -1343,117 +1184,6 @@ namespace PcAssemblyAssistant.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("RAMTimings");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.SSD", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int?>("CountryId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int?>("SSDMainCharacteristicsId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SSDSpeedAndPowerConsumptionId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SSDType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CountryId");
-
-                    b.HasIndex("Name")
-                        .IsUnique();
-
-                    b.HasIndex("SSDMainCharacteristicsId");
-
-                    b.HasIndex("SSDSpeedAndPowerConsumptionId");
-
-                    b.ToTable("SSDs");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.SSDMainCharacteristics", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("FormFactor")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KeyM2Connector")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MemoryStructure")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("NVMe")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("PhysicalInterface")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("StorageCapacity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UnitOfStorageCapacity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SSDMainCharacteristics");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.SSDSpeedAndPowerConsumption", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<float>("EnergyConsumption")
-                        .HasColumnType("real");
-
-                    b.Property<string>("MaxSequentialReadSpeed")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MaxSequentialWriteSpeed")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("RandomReadSpeedOf4KBFiles")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RandomWriteSpeedOf4KBFiles")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UnitEnergyConsumption")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SSDSpeedAndPowerConsumptions");
                 });
 
             modelBuilder.Entity("DBO_DAL.Identity.User", b =>
@@ -1854,39 +1584,6 @@ namespace PcAssemblyAssistant.Migrations
                     b.Navigation("MbCPUandChipset");
                 });
 
-            modelBuilder.Entity("DBO_DAL.Entities.PS", b =>
-                {
-                    b.HasOne("DBO_DAL.Entities.Country", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryId");
-
-                    b.HasOne("DBO_DAL.Entities.PSCablesAndConnectors", "PSCablesAndConnectors")
-                        .WithMany("PS")
-                        .HasForeignKey("PSCablesAndConnectorsId");
-
-                    b.HasOne("DBO_DAL.Entities.PSCertification", "PSCertification")
-                        .WithMany("PS")
-                        .HasForeignKey("PSCertificationId");
-
-                    b.HasOne("DBO_DAL.Entities.PSCoolingSystem", "PSCoolingSystem")
-                        .WithMany("PS")
-                        .HasForeignKey("PSCoolingSystemId");
-
-                    b.HasOne("DBO_DAL.Entities.PSElectricalParametrs", "PSElectricalParametrs")
-                        .WithMany("PS")
-                        .HasForeignKey("PSElectricalParametrsId");
-
-                    b.Navigation("Country");
-
-                    b.Navigation("PSCablesAndConnectors");
-
-                    b.Navigation("PSCertification");
-
-                    b.Navigation("PSCoolingSystem");
-
-                    b.Navigation("PSElectricalParametrs");
-                });
-
             modelBuilder.Entity("DBO_DAL.Entities.RAM", b =>
                 {
                     b.HasOne("DBO_DAL.Entities.Country", "Country")
@@ -1912,27 +1609,6 @@ namespace PcAssemblyAssistant.Migrations
                     b.Navigation("RAMPerformance");
 
                     b.Navigation("RAMTimings");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.SSD", b =>
-                {
-                    b.HasOne("DBO_DAL.Entities.Country", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryId");
-
-                    b.HasOne("DBO_DAL.Entities.SSDMainCharacteristics", "SSDMainCharacteristics")
-                        .WithMany("SSD")
-                        .HasForeignKey("SSDMainCharacteristicsId");
-
-                    b.HasOne("DBO_DAL.Entities.SSDSpeedAndPowerConsumption", "SSDSpeedAndPowerConsumption")
-                        .WithMany("SSD")
-                        .HasForeignKey("SSDSpeedAndPowerConsumptionId");
-
-                    b.Navigation("Country");
-
-                    b.Navigation("SSDMainCharacteristics");
-
-                    b.Navigation("SSDSpeedAndPowerConsumption");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -2111,26 +1787,6 @@ namespace PcAssemblyAssistant.Migrations
                     b.Navigation("MB");
                 });
 
-            modelBuilder.Entity("DBO_DAL.Entities.PSCablesAndConnectors", b =>
-                {
-                    b.Navigation("PS");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.PSCertification", b =>
-                {
-                    b.Navigation("PS");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.PSCoolingSystem", b =>
-                {
-                    b.Navigation("PS");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.PSElectricalParametrs", b =>
-                {
-                    b.Navigation("PS");
-                });
-
             modelBuilder.Entity("DBO_DAL.Entities.RAMKitVolumeAndComposition", b =>
                 {
                     b.Navigation("RAM");
@@ -2144,16 +1800,6 @@ namespace PcAssemblyAssistant.Migrations
             modelBuilder.Entity("DBO_DAL.Entities.RAMTimings", b =>
                 {
                     b.Navigation("RAM");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.SSDMainCharacteristics", b =>
-                {
-                    b.Navigation("SSD");
-                });
-
-            modelBuilder.Entity("DBO_DAL.Entities.SSDSpeedAndPowerConsumption", b =>
-                {
-                    b.Navigation("SSD");
                 });
 #pragma warning restore 612, 618
         }

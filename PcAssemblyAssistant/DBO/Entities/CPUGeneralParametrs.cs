@@ -12,5 +12,8 @@ namespace DBO_DAL.Entities
         public string Socket { get; set; }
         // Realise Date
         public DateTime? RealiseDate { get; set; }
+
+        // CPU
+        public virtual IList<CPU> CPU { get; set; }
     }
 }

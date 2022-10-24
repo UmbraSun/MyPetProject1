@@ -27,5 +27,7 @@ namespace DBO_DAL.Entities
         // Name of Cores Architecture
         public string Core { get; set; }
 
+        // CPU
+        public virtual IList<CPU> CPU { get; set; }
     }
 }

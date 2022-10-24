@@ -18,5 +18,8 @@ namespace DBO_DAL.Entities
         public int MaximumRAMfrequency { get; set; }
         // Maximum unit RAM Frequency in Processor
         public UnitsOfMeasure UnitOfMaximumRAMfrequency { get; set; }
+
+        // CPU
+        public virtual IList<CPU> CPU { get; set; }
     }
 }

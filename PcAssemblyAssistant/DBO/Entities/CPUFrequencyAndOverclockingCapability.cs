@@ -25,5 +25,7 @@ namespace DBO_DAL.Entities
         // Free Multiplier
         public bool FreeMultiplier { get; set; }
 
+        // CPU
+        public virtual IList<CPU> CPU { get; set; }
     }
 }
