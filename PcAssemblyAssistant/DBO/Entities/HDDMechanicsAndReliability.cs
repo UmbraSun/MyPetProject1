@@ -1,6 +1,6 @@
-﻿using DBO_DAL.Interfaces;
+﻿using DAL.Interfaces;
 
-namespace DBO_DAL.Entities
+namespace DAL.Entities
 {
     /// <summary>
     /// HDD mechanics and reliability

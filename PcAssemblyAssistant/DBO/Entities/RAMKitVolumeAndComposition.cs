@@ -1,7 +1,7 @@
-﻿using DBO_DAL.Enums;
-using DBO_DAL.Interfaces;
+﻿using DAL.Enums;
+using DAL.Interfaces;
 
-namespace DBO_DAL.Entities
+namespace DAL.Entities
 {
     /// <summary>
     /// RAM volume and composition of the kit
@@ -29,6 +29,10 @@ namespace DBO_DAL.Entities
         public bool ECCMemory { get; set; }
         // Rank
         public string? Rank { get; set; }
+        // INT Power consumption
+        public int Сonsumption { get; set; }
+        // Unit Power consumption
+        public UnitsOfMeasure UnitOfСonsumption { get; set; }
 
         // RAM
         public virtual IList<RAM> RAM { get; set; }

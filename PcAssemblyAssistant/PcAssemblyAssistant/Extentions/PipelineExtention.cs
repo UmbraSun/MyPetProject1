@@ -1,8 +1,8 @@
-﻿using DBO_DAL.Identity;
+﻿using DAL.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PcAssemblyAssistant.AppStart;
-using PcAssemblyAssistant.DbContext;
+using DAL.DbContext;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace PcAssemblyAssistant.Extentions

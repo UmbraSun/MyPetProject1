@@ -1,7 +1,7 @@
-﻿using DBO_DAL.Enums;
-using DBO_DAL.Interfaces;
+﻿using DAL.Enums;
+using DAL.Interfaces;
 
-namespace DBO_DAL.Entities
+namespace DAL.Entities
 {
     public class CPUGraphicsCore : IEntity<int>
     {

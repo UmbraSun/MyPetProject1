@@ -7,7 +7,7 @@ ConfigurationManager configuration = builder.Configuration; // allows both to ac
 IWebHostEnvironment environment = builder.Environment;
 
 // Add services to the container.
-builder.Services.AddServiceExt(configuration, environment);
+builder.Services.AddServiceExt(configuration);
 
 var app = builder.Build();
 

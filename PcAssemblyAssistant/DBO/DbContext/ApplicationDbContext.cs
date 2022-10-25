@@ -1,10 +1,9 @@
-﻿using DBO_DAL.Entities;
-using DBO_DAL.Identity;
+﻿using DAL.Entities;
+using DAL.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
 
-namespace PcAssemblyAssistant.DbContext
+namespace DAL.DbContext
 {
     /// <summary>
     /// MSSQL DbContext

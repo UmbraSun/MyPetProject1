@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using DAL.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
-namespace DBO_DAL.Identity
+namespace DAL.Identity
 {
     /// <summary>
     /// user DTO

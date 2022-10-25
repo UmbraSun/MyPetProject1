@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PcAssemblyAssistant.DbContext;
+using DAL.DbContext;
 
 #nullable disable
 
@@ -203,6 +203,12 @@ namespace PcAssemblyAssistant.Migrations
                     b.Property<string>("Socket")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UnitOfСonsumption")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Сonsumption")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -428,6 +434,12 @@ namespace PcAssemblyAssistant.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UnitOfСonsumption")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Сonsumption")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("GPUGeneralParametrs");
@@ -609,7 +621,13 @@ namespace PcAssemblyAssistant.Migrations
                     b.Property<int>("UnitMaxPowerConsumption")
                         .HasColumnType("int");
 
+                    b.Property<int>("UnitOfСonsumption")
+                        .HasColumnType("int");
+
                     b.Property<int>("UnitStandbyPowerConsumpiton")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Сonsumption")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -840,6 +858,12 @@ namespace PcAssemblyAssistant.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PowerPhases")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UnitOfСonsumption")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Сonsumption")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -1286,6 +1310,9 @@ namespace PcAssemblyAssistant.Migrations
                     b.Property<int>("TotalAmount")
                         .HasColumnType("int");
 
+                    b.Property<int>("UnitOfСonsumption")
+                        .HasColumnType("int");
+
                     b.Property<int>("UnitTotalAmount")
                         .HasColumnType("int");
 
@@ -1293,6 +1320,9 @@ namespace PcAssemblyAssistant.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("VolumeOfOneModule")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Сonsumption")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -1431,8 +1461,8 @@ namespace PcAssemblyAssistant.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<float>("EnergyConsumption")
-                        .HasColumnType("real");
+                    b.Property<int>("EnergyConsumption")
+                        .HasColumnType("int");
 
                     b.Property<string>("MaxSequentialReadSpeed")
                         .IsRequired()

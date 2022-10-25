@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DBO_DAL.Interfaces
+﻿namespace DAL.Interfaces
 {
     public interface IEntity<T>
     {

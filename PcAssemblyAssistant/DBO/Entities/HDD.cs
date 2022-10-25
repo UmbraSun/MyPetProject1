@@ -1,7 +1,6 @@
-﻿using DBO_DAL.Interfaces;
-using Microsoft.EntityFrameworkCore.Query;
+﻿using DAL.Interfaces;
 
-namespace DBO_DAL.Entities
+namespace DAL.Entities
 {
     /// <summary>
     /// HDD

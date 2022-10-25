@@ -1,6 +1,7 @@
-﻿using DBO_DAL.Interfaces;
+﻿using DAL.Enums;
+using DAL.Interfaces;
 
-namespace DBO_DAL.Entities
+namespace DAL.Entities
 {
     public class MBCollingAndPower : IEntity<int>
     {
@@ -15,6 +16,10 @@ namespace DBO_DAL.Entities
         public string? PassiveCooling { get; set; }
         // Active Cooling
         public string? ActiveCooling { get; set; }
+        // INT Power consumption
+        public int Сonsumption { get; set; }
+        // Unit Power consumption
+        public UnitsOfMeasure UnitOfСonsumption { get; set; }
 
         public virtual IList<MB> MB { get; set; }
     }

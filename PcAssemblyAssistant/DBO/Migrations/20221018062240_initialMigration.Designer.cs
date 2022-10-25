@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
-using PcAssemblyAssistant.DbContext;
+using DAL.DbContext;
 
 #nullable disable
 

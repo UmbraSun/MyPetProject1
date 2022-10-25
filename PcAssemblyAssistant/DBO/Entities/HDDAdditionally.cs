@@ -1,7 +1,7 @@
-﻿using DBO_DAL.Enums;
-using DBO_DAL.Interfaces;
+﻿using DAL.Enums;
+using DAL.Interfaces;
 
-namespace DBO_DAL.Entities
+namespace DAL.Entities
 {
     /// <summary>
     /// additionally
@@ -21,7 +21,11 @@ namespace DBO_DAL.Entities
         public int MinOperatingTemp { get; set; }
         // Maximum operating temrature °C
         public int MaxOperatingTemp { get; set; }
-        
+        // INT Power consumption
+        public int Сonsumption { get; set; }
+        // Unit Power consumption
+        public UnitsOfMeasure UnitOfСonsumption { get; set; }
+
         // HDD
         public virtual IList<HDD> HDD { get; set; }
     }

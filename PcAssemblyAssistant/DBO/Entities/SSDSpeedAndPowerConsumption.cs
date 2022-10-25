@@ -1,7 +1,7 @@
-﻿using DBO_DAL.Enums;
-using DBO_DAL.Interfaces;
+﻿using DAL.Enums;
+using DAL.Interfaces;
 
-namespace DBO_DAL.Entities
+namespace DAL.Entities
 {
     /// <summary>
     /// SSD spped characteristics and power consumption
@@ -17,8 +17,8 @@ namespace DBO_DAL.Entities
         public int RandomReadSpeedOf4KBFiles { get; set; }
         // Random write speed of 4 KB files (IOPS - Number of I/O operations per second)
         public int RandomWriteSpeedOf4KBFiles { get; set; }
-        // Energy FLOAT consumption
-        public float EnergyConsumption { get; set; }
+        // Energy INT consumption
+        public int EnergyConsumption { get; set; }
         // Energy UNIT consumption
         public UnitsOfMeasure UnitEnergyConsumption { get; set; }
 

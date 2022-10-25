@@ -1,13 +1,17 @@
 ﻿using BLL.Infrastructure;
-using DBO_DAL.Identity;
+using DAL.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using PcAssemblyAssistant.DbContext;
+using DAL.DbContext;
 using System.Reflection;
 using System.Text;
+using DAL.Interfaces;
+using DAL.UnitOfWork;
+using BLL.Interfaces;
+using BLL.Services;
 
 namespace PcAssemblyAssistant.Extensions
 {
@@ -21,10 +25,8 @@ namespace PcAssemblyAssistant.Extensions
         /// </summary>
         /// <param name="collection">extention for this</param>
         /// <param name="configuration">application configuraion</param>
-        /// <param name="environment">web host environment</param>
         public static void AddServiceExt(this IServiceCollection collection,
-            ConfigurationManager configuration,
-            IWebHostEnvironment environment)
+            ConfigurationManager configuration)
         {
             collection.AddControllers();
             // mapper
@@ -36,6 +38,10 @@ namespace PcAssemblyAssistant.Extensions
             collection.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+            // Unit of Work
+            collection.AddScoped<IUnitOfWork, UnitOfWork>();
+            // Scoped
+            collection.AddScoped<ICPUService, CPUService>();
             // authentication with jwt and jwt settings
             collection.AddAuthentication(options =>
             {

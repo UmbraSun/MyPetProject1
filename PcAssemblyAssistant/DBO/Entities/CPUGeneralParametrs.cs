@@ -1,6 +1,7 @@
-﻿using DBO_DAL.Interfaces;
+﻿using DAL.Enums;
+using DAL.Interfaces;
 
-namespace DBO_DAL.Entities
+namespace DAL.Entities
 {
 
     public class CPUGeneralParametrs : IEntity<int>
@@ -12,6 +13,10 @@ namespace DBO_DAL.Entities
         public string Socket { get; set; }
         // Realise Date
         public DateTime? RealiseDate { get; set; }
+        // INT Power consumption
+        public int Сonsumption { get; set; }
+        // Unit Power consumption
+        public UnitsOfMeasure UnitOfСonsumption { get; set; }
 
         // CPU
         public virtual IList<CPU> CPU { get; set; }

@@ -1,7 +1,6 @@
-﻿using DBO_DAL.Interfaces;
-using System.Net.NetworkInformation;
+﻿using DAL.Interfaces;
 
-namespace DBO_DAL.Entities
+namespace DAL.Entities
 {
     // motherboard internal connectors
     public class MBInternalConnectors : IEntity<int>

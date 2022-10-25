@@ -1,6 +1,6 @@
-﻿using DBO_DAL.Interfaces;
+﻿using DAL.Interfaces;
 
-namespace DBO_DAL.Entities
+namespace DAL.Entities
 {
     // power supply certification
     public class PSCertification : IEntity<int>
