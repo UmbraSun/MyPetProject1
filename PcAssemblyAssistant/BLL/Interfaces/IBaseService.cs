@@ -4,10 +4,10 @@ namespace BLL.Interfaces
 {
     public interface IBaseService<T>
     {
-        Task<T> GetByIdAsync(int id);
-        Task<IList<T>> GetListAsync();
-        Task<T> CreateModelAsync(T model);
-        void EditModel(T model);
-        void DeleteModel(T model);
+        Task<T> BaseGetByIdAsync(int id);
+        Task<IList<T>> BaseGetListAsync();
+        Task<T> BaseCreateModelAsync(T model);
+        void BaseEditModel(T model);
+        void BaseDeleteModel(T model);
     }
 }

@@ -18,7 +18,7 @@ namespace BLL.Services
         protected readonly IMapper _mapper;
         protected readonly IRepository<R> _repository;
 
-        public BaseService(IUnitOfWork uow, IMapper mapper, IRepository<R> repository)
+        public BaseService(IUnitOfWork uow, IMapper mapper)
         {
             _uow = uow;
             _mapper = mapper;
@@ -30,7 +30,7 @@ namespace BLL.Services
         /// </summary>
         /// <param name="model">View model</param>
         /// <returns></returns>
-        public virtual async Task<T> CreateModelAsync(T model)
+        public async Task<T> BaseCreateModelAsync(T model)
         {
             var result = await _repository.CreateAsync(_mapper.Map<R>(model));
             await _repository.SaveAsync();
@@ -41,7 +41,7 @@ namespace BLL.Services
         /// Delete model from db
         /// </summary>
         /// <param name="model">View model</param>
-        public virtual void DeleteModel(T model)
+        public void BaseDeleteModel(T model)
         {
             _repository.Delete(_mapper.Map<R>(model));
             _repository.SaveAsync();
@@ -51,7 +51,7 @@ namespace BLL.Services
         /// Edit model in db
         /// </summary>
         /// <param name="model">View model</param>
-        public virtual void EditModel(T model)
+        public void BaseEditModel(T model)
         {
             _repository.Edit(_mapper.Map<R>(model));
         }
@@ -61,8 +61,8 @@ namespace BLL.Services
         /// </summary>
         /// <param name="id">model id</param>
         /// <returns></returns>
-        public virtual async Task<T> GetByIdAsync(int id)
-        {
+        public async Task<T> BaseGetByIdAsync(int id)
+        { 
             return _mapper.Map<T>(await _repository.GetByIdAsync(id));
         }
 
@@ -70,10 +70,20 @@ namespace BLL.Services
         /// Get list of model from db
         /// </summary>
         /// <returns></returns>
-        public virtual async Task<IList<T>> GetListAsync()
+        public async Task<IList<T>> BaseGetListAsync()
         {
             var result = await _repository.GetAsync();
             return result.Select(x => _mapper.Map<T>(x)).ToList();
         }
+
+        /// <summary>
+        /// model add entity check
+        /// </summary>
+        protected virtual void Check() { }
+        
+        /// <summary>
+        /// manipulation with data before add in db
+        /// </summary>
+        protected virtual void BeforeAdd() { }
     }
 }

@@ -1,4 +1,4 @@
-﻿using DAL.Enums;
+﻿using Common.Enums;
 using DAL.Interfaces;
 
 namespace DAL.Entities

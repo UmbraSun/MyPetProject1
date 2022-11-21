@@ -92,62 +92,62 @@ namespace DAL.DbContext
 
             var cpu = builder.Entity<CPU>();
             cpu.HasIndex(x => x.Name).IsUnique();
-            cpu.HasOne(x => x.CoreAndArchitecture).WithMany(x => x.CPU);
-            cpu.HasOne(x => x.FrequencyAndOverclockingCapability).WithMany(x => x.CPU);
-            cpu.HasOne(x => x.Parametrs).WithMany(x => x.CPU);
-            cpu.HasOne(x => x.GPU).WithMany(x => x.CPU);
-            cpu.HasOne(x => x.RAMoptions).WithMany(x => x.CPU);
-            cpu.HasOne(x => x.ThermalCharacteristicks).WithMany(x => x.CPU);
+            cpu.HasOne(x => x.CoreAndArchitecture).WithMany(x => x.CPU).OnDelete(DeleteBehavior.Cascade);
+            cpu.HasOne(x => x.FrequencyAndOverclockingCapability).WithMany(x => x.CPU).OnDelete(DeleteBehavior.Cascade);
+            cpu.HasOne(x => x.Parametrs).WithMany(x => x.CPU).OnDelete(DeleteBehavior.Cascade);
+            cpu.HasOne(x => x.GPU).WithMany(x => x.CPU).OnDelete(DeleteBehavior.Cascade);
+            cpu.HasOne(x => x.RAMoptions).WithMany(x => x.CPU).OnDelete(DeleteBehavior.Cascade);
+            cpu.HasOne(x => x.ThermalCharacteristicks).WithMany(x => x.CPU).OnDelete(DeleteBehavior.Cascade);
             cpu.HasOne(x => x.Country);
 
             var mb = builder.Entity<MB>();
             mb.HasIndex(x => x.Name).IsUnique();
-            mb.HasOne(x => x.MBAudio).WithMany(x => x.MB);
-            mb.HasOne(x => x.MBBackPanel).WithMany(x => x.MB);
-            mb.HasOne(x => x.MBCollingAndPower).WithMany(x => x.MB);
-            mb.HasOne(x => x.MbCPUandChipset).WithMany(x => x.MB);
-            mb.HasOne(x => x.MBExpensionSlots).WithMany(x => x.MB);
-            mb.HasOne(x => x.MBFormFactor).WithMany(x => x.MB);
-            mb.HasOne(x => x.MBInternalConnectors).WithMany(x => x.MB);
-            mb.HasOne(x => x.MBStorageDevice).WithMany(x => x.MB);
-            mb.HasOne(x => x.MBRAM).WithMany(x => x.MB);
-            mb.HasOne(x => x.MBWeb).WithMany(x => x.MB);
+            mb.HasOne(x => x.MBAudio).WithMany(x => x.MB).OnDelete(DeleteBehavior.Cascade);
+            mb.HasOne(x => x.MBBackPanel).WithMany(x => x.MB).OnDelete(DeleteBehavior.Cascade);
+            mb.HasOne(x => x.MBCollingAndPower).WithMany(x => x.MB).OnDelete(DeleteBehavior.Cascade);
+            mb.HasOne(x => x.MbCPUandChipset).WithMany(x => x.MB).OnDelete(DeleteBehavior.Cascade);
+            mb.HasOne(x => x.MBExpensionSlots).WithMany(x => x.MB).OnDelete(DeleteBehavior.Cascade);
+            mb.HasOne(x => x.MBFormFactor).WithMany(x => x.MB).OnDelete(DeleteBehavior.Cascade);
+            mb.HasOne(x => x.MBInternalConnectors).WithMany(x => x.MB).OnDelete(DeleteBehavior.Cascade);
+            mb.HasOne(x => x.MBStorageDevice).WithMany(x => x.MB).OnDelete(DeleteBehavior.Cascade);
+            mb.HasOne(x => x.MBRAM).WithMany(x => x.MB).OnDelete(DeleteBehavior.Cascade);
+            mb.HasOne(x => x.MBWeb).WithMany(x => x.MB).OnDelete(DeleteBehavior.Cascade);
             mb.HasOne(x => x.Country);
 
             var GPU = builder.Entity<GPU>();
             GPU.HasIndex(x => x.Name).IsUnique();
-            GPU.HasOne(x => x.GPUConnection).WithMany(x => x.GPU);
-            GPU.HasOne(x => x.GPUGeneralParametrs).WithMany(x => x.GPU);
-            GPU.HasOne(x => x.GPUVideoProcessorSpecific).WithMany(x => x.GPU);
-            GPU.HasOne(x => x.GPUCoolingSystem).WithMany(x => x.GPU);
-            GPU.HasOne(x => x.GPUImageOutput).WithMany(x => x.GPU);
-            GPU.HasOne(x => x.GPUImageOutput).WithMany(x => x.GPU);
-            GPU.HasOne(x => x.GPUVideoMemorySpecific).WithMany(x => x.GPU);
-            GPU.HasOne(x => x.GPUVideoProcessorSpecific).WithMany(x => x.GPU);
+            GPU.HasOne(x => x.GPUConnection).WithMany(x => x.GPU).OnDelete(DeleteBehavior.Cascade);
+            GPU.HasOne(x => x.GPUGeneralParametrs).WithMany(x => x.GPU).OnDelete(DeleteBehavior.Cascade);
+            GPU.HasOne(x => x.GPUVideoProcessorSpecific).WithMany(x => x.GPU).OnDelete(DeleteBehavior.Cascade);
+            GPU.HasOne(x => x.GPUCoolingSystem).WithMany(x => x.GPU).OnDelete(DeleteBehavior.Cascade);
+            GPU.HasOne(x => x.GPUImageOutput).WithMany(x => x.GPU).OnDelete(DeleteBehavior.Cascade);
+            GPU.HasOne(x => x.GPUImageOutput).WithMany(x => x.GPU).OnDelete(DeleteBehavior.Cascade);
+            GPU.HasOne(x => x.GPUVideoMemorySpecific).WithMany(x => x.GPU).OnDelete(DeleteBehavior.Cascade);
+            GPU.HasOne(x => x.GPUVideoProcessorSpecific).WithMany(x => x.GPU).OnDelete(DeleteBehavior.Cascade);
 
             var RAM = builder.Entity<RAM>();
             RAM.HasIndex(x => x.Name).IsUnique();
-            RAM.HasOne(x => x.RAMKitVolumeAndComposition).WithMany(x => x.RAM);
-            RAM.HasOne(x => x.RAMPerformance).WithMany(x => x.RAM);
-            RAM.HasOne(x => x.RAMTimings).WithMany(x => x.RAM);
+            RAM.HasOne(x => x.RAMKitVolumeAndComposition).WithMany(x => x.RAM).OnDelete(DeleteBehavior.Cascade);
+            RAM.HasOne(x => x.RAMPerformance).WithMany(x => x.RAM).OnDelete(DeleteBehavior.Cascade);
+            RAM.HasOne(x => x.RAMTimings).WithMany(x => x.RAM).OnDelete(DeleteBehavior.Cascade);
 
             var HDD = builder.Entity<HDD>();
             HDD.HasIndex(x => x.Name).IsUnique();
-            HDD.HasOne(x => x.HDDMechanicsAndReliability).WithMany(x => x.HDD);
-            HDD.HasOne(x => x.HDDStorageDevice).WithMany(x => x.HDD);
-            HDD.HasOne(x => x.HDDAdditionally).WithMany(x => x.HDD);
+            HDD.HasOne(x => x.HDDMechanicsAndReliability).WithMany(x => x.HDD).OnDelete(DeleteBehavior.Cascade);
+            HDD.HasOne(x => x.HDDStorageDevice).WithMany(x => x.HDD).OnDelete(DeleteBehavior.Cascade);
+            HDD.HasOne(x => x.HDDAdditionally).WithMany(x => x.HDD).OnDelete(DeleteBehavior.Cascade);
 
             var SSD = builder.Entity<SSD>();
             SSD.HasIndex(x => x.Name).IsUnique();
-            SSD.HasOne(x => x.SSDMainCharacteristics).WithMany(x => x.SSD);
-            SSD.HasOne(x => x.SSDSpeedAndPowerConsumption).WithMany(x => x.SSD);
+            SSD.HasOne(x => x.SSDMainCharacteristics).WithMany(x => x.SSD).OnDelete(DeleteBehavior.Cascade);
+            SSD.HasOne(x => x.SSDSpeedAndPowerConsumption).WithMany(x => x.SSD).OnDelete(DeleteBehavior.Cascade);
 
             var PS = builder.Entity<PS>();
             PS.HasIndex(x => x.Name).IsUnique();
-            PS.HasOne(x => x.PSCablesAndConnectors).WithMany(x => x.PS);
-            PS.HasOne(x => x.PSCertification).WithMany(x => x.PS);
-            PS.HasOne(x => x.PSCoolingSystem).WithMany(x => x.PS);
-            PS.HasOne(x => x.PSElectricalParametrs).WithMany(x => x.PS);
+            PS.HasOne(x => x.PSCablesAndConnectors).WithMany(x => x.PS).OnDelete(DeleteBehavior.Cascade);
+            PS.HasOne(x => x.PSCertification).WithMany(x => x.PS).OnDelete(DeleteBehavior.Cascade);
+            PS.HasOne(x => x.PSCoolingSystem).WithMany(x => x.PS).OnDelete(DeleteBehavior.Cascade);
+            PS.HasOne(x => x.PSElectricalParametrs).WithMany(x => x.PS).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

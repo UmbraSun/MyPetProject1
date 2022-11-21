@@ -7,10 +7,10 @@ using Models.Interfaces;
 namespace BLL.Services
 {
     public class CPUService : BaseService<CPU, IServiceResult>, ICPUService
+        //where T : class, IServiceResult
     {
         public CPUService(IUnitOfWork uow, 
-                          IMapper mapper, 
-                          IRepository<CPU> repository) : base(uow, mapper, repository)
+                          IMapper mapper) : base(uow, mapper)
         { }
     }
 }

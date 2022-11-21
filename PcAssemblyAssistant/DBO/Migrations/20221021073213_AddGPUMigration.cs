@@ -138,7 +138,8 @@ namespace PcAssemblyAssistant.Migrations
                         name: "FK_GPU_Countries_CountryId",
                         column: x => x.CountryId,
                         principalTable: "Countries",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_GPU_GPUConnections_GPUConnectionId",
                         column: x => x.GPUConnectionId,

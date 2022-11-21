@@ -81,7 +81,8 @@ namespace PcAssemblyAssistant.Migrations
                         name: "FK_RAMs_Countries_CountryId",
                         column: x => x.CountryId,
                         principalTable: "Countries",
-                        principalColumn: "Id");
+                        principalColumn: "Id", 
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_RAMs_KitVolumeAndCompositions_RAMKitVolumeAndCompositionId",
                         column: x => x.RAMKitVolumeAndCompositionId,

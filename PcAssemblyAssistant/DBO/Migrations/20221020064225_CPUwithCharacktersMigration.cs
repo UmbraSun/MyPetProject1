@@ -153,7 +153,7 @@ namespace PcAssemblyAssistant.Migrations
                         column: x => x.CountryId,
                         principalTable: "Countries",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_CPUs_CPUCoreAndArchitectures_CoreAndArchitectureId",
                         column: x => x.CoreAndArchitectureId,

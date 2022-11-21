@@ -33,7 +33,9 @@ namespace PcAssemblyAssistant.Extensions
             collection.AddAutoMapper(typeof(AutoMapperProfileBLL));
             // db context
             collection.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+                // Performs repeated requests to the database after a failure(Connection Resilience)
+                opt => opt.EnableRetryOnFailure()));
             // identity and token provider
             collection.AddIdentity<User, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

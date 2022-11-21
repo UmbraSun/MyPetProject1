@@ -4,5 +4,6 @@ namespace BLL.Interfaces
 {
     public interface ICPUService : IBaseService<IServiceResult>
     {
+
     }
 }

@@ -286,7 +286,8 @@ namespace PcAssemblyAssistant.Migrations
                         name: "FK_MBs_Countries_CountryId",
                         column: x => x.CountryId,
                         principalTable: "Countries",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_MBs_MBAudios_MBAudioId",
                         column: x => x.MBAudioId,
@@ -589,7 +590,7 @@ namespace PcAssemblyAssistant.Migrations
                 column: "CountryId",
                 principalTable: "Countries",
                 principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
+                onDelete: ReferentialAction.NoAction);
 
             migrationBuilder.AddForeignKey(
                 name: "FK_CPUs_CPUCoreAndArchitectures_CoreAndArchitectureId",

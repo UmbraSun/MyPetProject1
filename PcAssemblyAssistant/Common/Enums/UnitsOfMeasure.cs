@@ -1,4 +1,4 @@
-﻿namespace DAL.Enums
+﻿namespace Common.Enums
 {
     public enum UnitsOfMeasure
     {

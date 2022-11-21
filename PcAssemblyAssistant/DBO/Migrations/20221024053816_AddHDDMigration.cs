@@ -83,7 +83,8 @@ namespace PcAssemblyAssistant.Migrations
                         name: "FK_HDDs_Countries_CountryId",
                         column: x => x.CountryId,
                         principalTable: "Countries",
-                        principalColumn: "Id");
+                        principalColumn: "Id", 
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_HDDs_HDDAdditionallies_HDDAdditionallyId",
                         column: x => x.HDDAdditionallyId,
