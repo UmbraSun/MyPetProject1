@@ -1,6 +1,5 @@
 using PcAssemblyAssistant.Extensions;
 using PcAssemblyAssistant.Extentions;
-using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 

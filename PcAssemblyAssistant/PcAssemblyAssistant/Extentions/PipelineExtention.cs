@@ -23,7 +23,7 @@ namespace PcAssemblyAssistant.Extentions
             using (var scope = app.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-                await db.Database.EnsureCreatedAsync();
+                //await db.Database.EnsureCreatedAsync();
                 await db.Database.MigrateAsync();
             }
             // role and user initializer
